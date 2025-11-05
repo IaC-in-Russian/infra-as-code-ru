@@ -27,7 +27,7 @@
 
 ## Быстрый старт
 ```bash
-git clone https://github.com/<USER>/iac-ansible-ru.git
+git clone https://github.com/IaC-in-Russian/infra-as-code-ru.git
 cd iac-ansible-ru
 
 # Проверка установки

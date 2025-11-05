@@ -1,0 +1,12 @@
+- name: Обновить кеш и установить полезные пакеты
+  ansible.builtin.apt:
+    name: [htop, curl]
+    state: present
+    update_cache: true
+  notify: Перезапустить rsyslog
+
+  - name: MOTD из шаблона
+  ansible.builtin.template:
+    src: motd.j2
+    dest: /etc/motd
+    mode: '0644'

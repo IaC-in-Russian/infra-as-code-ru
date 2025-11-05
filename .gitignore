@@ -1,0 +1,6 @@
+*.retry
+*.log
+.vscode/
+.idea/
+*.swp
+.vault_pass.txt

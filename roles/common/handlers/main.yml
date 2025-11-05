@@ -1,0 +1,4 @@
+- name: Перезапустить rsyslog
+  ansible.builtin.service:
+    name: rsyslog
+    state: restarted

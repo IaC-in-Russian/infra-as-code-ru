@@ -1,0 +1,22 @@
+---
+- name: Test ansible.cfg advanced settings
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Simulate fast task
+      command: sleep 1
+      when: inventory_hostname == 'app-1.dev.example'
+
+    - name: Simulate slow task
+      command: sleep 5
+      when: inventory_hostname == 'app-2.dev.example'
+
+    - name: Show who finished
+      debug:
+        msg: "Host {{ inventory_hostname }} done"
+
+    - name: Force fatal error on broken host
+      fail:
+        msg: "Intentional failure on {{ inventory_hostname }}"
+      when: inventory_hostname == 'app-3.dev.example'
